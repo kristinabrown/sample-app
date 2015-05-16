@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
                     length: {maximum: 244}, 
                     format: {with: VALID_EMAIL_REGEX },
                     uniqueness: {case_sensitive: false}
-  validates :password, length: {minimum: 6}
+  validates :password, length: {minimum: 6}, allow_blank: true
   has_secure_password
   
   def User.digest(string)
